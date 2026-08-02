@@ -1,7 +1,40 @@
+BEGIN
+   EXECUTE IMMEDIATE 'DROP TABLE Sections';
+EXCEPTION
+   WHEN OTHERS THEN
+      IF SQLCODE != -942 THEN  -- -942 = table does not exist
+         RAISE;
+      END IF;
+END;
+/
 
+BEGIN
+   EXECUTE IMMEDIATE 'DROP TABLE Articles';
+EXCEPTION
+   WHEN OTHERS THEN
+      IF SQLCODE != -942 THEN  
+         RAISE;
+      END IF;
+END;
+/
+
+BEGIN
+   EXECUTE IMMEDIATE 'DROP TABLE Categories';
+EXCEPTION
+   WHEN OTHERS THEN
+      IF SQLCODE != -942 THEN  
+         RAISE;
+      END IF;
+END;
+/
+
+
+
+DROP TABLE IF EXISTS Articles; 
+DROP TABLE IF EXISTS Categories;
 CREATE TABLE Categories (
     category_id RAW(16) PRIMARY KEY,
-    name VARCHAR2(100) UNIQUE NOT NULL,
+    name VARCHAR2(100) NOT NULL,
     description CLOB,
     position NUMBER NOT NULL -- ordering of Categories
 );

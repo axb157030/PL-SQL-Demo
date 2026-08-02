@@ -68,6 +68,7 @@ begin
          ( v_category_ids(i),
            v_category_name,
            get_sample_category_description(v_category_names(i)), i );
+           COMMIT;
     end loop;
       for i in 1..v_article_titles.count loop
          v_article_ids.extend;
@@ -89,6 +90,7 @@ begin
               v_category_id,
               systimestamp,
               systimestamp, i );
+              COMMIT;
       end loop;
       for i in 1..(v_article_titles.count * 2)loop
          v_section_title := 'Section title: ' || i;
@@ -110,6 +112,7 @@ begin
                  get_sample_article_summary(v_article_title)),
                  i
                );
+               COMMIT;
       end loop;
    -- Show the values in the tables
    show_values_of_world_building_tables;
