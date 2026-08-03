@@ -1,4 +1,4 @@
-declare
+DECLARE
    TYPE t_categories IS TABLE OF categories.name%type;
    TYPE t_article_titles IS TABLE OF articles.title%type;
    type t_ids is table of raw(16);

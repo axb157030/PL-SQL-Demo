@@ -1,0 +1,5 @@
+# .dockerignore
+.git
+.vscode
+*.log
+Thumbs.db

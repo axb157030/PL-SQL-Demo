@@ -11,7 +11,7 @@ BEGIN
     FOR rec IN (SELECT * FROM Articles) LOOP
         DBMS_OUTPUT.PUT_LINE(rec.position || '  ' || rec.title || ': ' || rec.summary);
     END LOOP;
-    -- Display the values in the Sections table. 
+    -- Display the values in the Sections table. D
     DBMS_OUTPUT.PUT_LINE('Sections:');
     FOR rec IN (SELECT * FROM Sections) LOOP
         DBMS_OUTPUT.PUT_LINE(rec.position || '  ' || rec.title || ': ' || rec.content);
